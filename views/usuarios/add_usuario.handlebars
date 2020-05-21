@@ -1,0 +1,36 @@
+<div class="card card-body col-6 mx-auto">
+    <h3 class="text-gray-800">Agregar usuario</h3>
+    <form action="/usuarios" method="post">
+        <div class="form-group">
+            <label class="text-gray-800" for="nombre">Nombre</label>
+            <input type="text" name="nombre" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label class="text-gray-800" for="apellido">Apellido</label>
+            <input type="text" name="apellido" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label class="text-gray-800" for="correo">Correo</label>
+            <input type="email" name="correo" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label class="text-gray-800" for="password">Password</label>
+            <input type="password" name="password" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label class="text-gray-800" for="password2">Confirma Password</label>
+            <input type="password" name="password2" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label class="text-gray-800" for="tipo">Tipo de usuario</label>
+            <select name="tipo" class="custom-select" id="inputGroupSelect01">
+                <option selected>Selecciona uno...</option>
+                {{#each tiposDeUsuario}}
+                <option value="{{[]}}">{{[]}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    {{usuarios}}
+</div>
